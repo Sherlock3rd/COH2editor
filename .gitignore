@@ -19,6 +19,7 @@ temp/
 *.tmp
 *.bak
 *.log
+_COH2_temp.info
 
 # Editor and OS metadata
 .vs/

@@ -16,15 +16,23 @@
 - [x] 已记录掩体、LOS、建筑和车辆通道的灰盒约束。
 - [x] 已完成 2 m 间隔等高线方向、19 个规划分区与补给相邻关系。
 - [x] 已完成欧洲乡村雨后晚夏的暂定氛围方向和平面图设计。
+- [x] 已建立并保存 World Builder 场景与 `.sgb`。
+- [x] 已生成 `.info`、`.options`、`.scenariomarker`、`_ID.scar` 与基础战术地图产物。
+- [x] 已在 Heightmap Editor 中设置并保存 16 m 全图基准高程。
 
 ## 尚未完成，不能据此宣称可玩
 
-- [ ] World Builder 场景与 `.sgb`。
 - [ ] 双方完整起始包、基地领地和 entry points。
 - [ ] 实际 sector polygon、相邻关系与补给链。
 - [ ] 将规划等高线录入 World Builder 并复核坡度与车辆路径。
 - [ ] interactivity stage、impass map、软边与路径网格。
 - [ ] 道路、掩体、LOS blocker 和车辆通道。
-- [ ] `.info`、`.options`、`.scenariomarker`、`_id.scar`、预览等生成产物。
 - [ ] World Builder 错误列表检查。
 - [ ] 游戏内 1v1 AI 加载、占点、资源、VP 和车辆路径验收。
+
+## 2026-08-19 编辑器校验记录
+
+- 规划数据静态检查通过：0 项失败。
+- 地图源文件 SHA-256：`DE16C6ED78BD821E0F725A39B093A87619E4E25B16A648BEC06C9970D8B5272C`。
+- World Builder 保存校验未通过：Player 1 和 Player 2 均缺少已赋权的 `map_entry_point`。
+- 因未通过游戏内加载与路径验收，当前交付标记为“灰盒阶段”，不标记为可玩成品。

@@ -1,0 +1,37 @@
+HeaderInfo =  
+{
+	scenarioname = "2p_codex_crossroads",
+	scenariodescription = "",
+	maxplayers = 2,
+	scenario_battlefront = 0,
+	scenarioabbrname = "",
+	savedname = "",
+	version = 2008,
+	mapsize =  
+	{
+		160,
+		128,
+	},
+	music = "",
+	point_positions =  
+	{
+		 
+		{
+			y = 30,
+			x = 0,
+			owner_id = 1000,
+			ebp_name = "starting_position_shared_territory",
+		},
+		 
+		{
+			y = -30.00000,
+			x = -0.00000,
+			owner_id = 1001,
+			ebp_name = "starting_position_shared_territory",
+		},
+	},
+	default_skins =  
+	{
+	},
+}
+

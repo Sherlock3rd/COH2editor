@@ -28,6 +28,7 @@
 - 正式名称由 `2p_background_trial` 更新为 `2p_codex_crossroads`。
 - 配置个人 GitHub 远端 `Sherlock3rd/COH2editor` 和 COH2 二进制 Git LFS 规则。
 - 本机环境配置已排除出公开提交，并提供可复制的示例配置。
+- 已将首批项目文件推送到 `Sherlock3rd/COH2editor` 的 `main` 分支。
 
 ## 未完成与阻断原因
 

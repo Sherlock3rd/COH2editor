@@ -9,8 +9,8 @@ HeaderInfo =
 	version = 2008,
 	mapsize =  
 	{
-		160,
-		128,
+		320,
+		320,
 	},
 	music = "",
 	point_positions =  
@@ -28,6 +28,69 @@ HeaderInfo =
 			x = -0.00000,
 			owner_id = 1001,
 			ebp_name = "starting_position_shared_territory",
+		},
+		 
+		{
+			y = -48.85641,
+			x = -47.72919,
+			owner_id = 0,
+			ebp_name = "victory_point",
+		},
+		 
+		{
+			y = -157.02573,
+			x = 140.20258,
+			owner_id = 0,
+			ebp_name = "territory_munitions_point_mp",
+		},
+		 
+		{
+			y = -90.38437,
+			x = -140.52979,
+			owner_id = 0,
+			ebp_name = "territory_point_mp",
+		},
+		 
+		{
+			y = 3.66049,
+			x = 66.46777,
+			owner_id = 0,
+			ebp_name = "territory_point_mp",
+		},
+		 
+		{
+			y = 121.72510,
+			x = -20.38565,
+			owner_id = 0,
+			ebp_name = "territory_point_mp",
+		},
+		 
+		{
+			y = 120.28070,
+			x = 118.89392,
+			owner_id = 0,
+			ebp_name = "territory_point_mp",
+		},
+		 
+		{
+			y = -25.50677,
+			x = 126.84619,
+			owner_id = 0,
+			ebp_name = "territory_point_mp",
+		},
+		 
+		{
+			y = 118.25720,
+			x = -153.15363,
+			owner_id = 0,
+			ebp_name = "territory_point_mp",
+		},
+		 
+		{
+			y = -132.80450,
+			x = -2.19781,
+			owner_id = 0,
+			ebp_name = "territory_point_mp",
 		},
 	},
 	default_skins =  

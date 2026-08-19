@@ -17,6 +17,7 @@ Read [references/source-index.md](references/source-index.md) when researching o
 
 ## Route the task
 
+- For every World Builder implementation or repair, read [references/end-to-end-operations.md](references/end-to-end-operations.md) first; it defines the complete G0-G7 workflow, UI batching, recovery, and efficiency rules.
 - For a new or repaired 1v1 map, read [references/fast-build-workflow.md](references/fast-build-workflow.md) and `../../spec/coh2-world-builder/playable-1v1-map-spec.md`.
 - For UI operation or shortcuts, read [references/world-builder-controls.md](references/world-builder-controls.md).
 - For required gameplay entities, read [references/gameplay-object-catalog.md](references/gameplay-object-catalog.md).
@@ -40,6 +41,18 @@ Read [references/source-index.md](references/source-index.md) when researching o
 6. Launch a real 1v1 custom match with one AI and run the acceptance checks.
 7. Only after graybox acceptance, add terrain, roads, cover, buildings, splines, lighting, and map-edge dressing.
 8. Re-run runtime acceptance after material changes.
+
+Report progress using the G0-G7 stages defined in the operations manual. Include the last saved stage, unsaved work, and the evidence type. “Opens”, “saved”, “correct dimensions”, and “generated starts” are intermediate facts, never completion claims.
+
+## Execution priority
+
+1. Advance the next graybox gate.
+2. Resolve blockers that prevent that gate.
+3. Generate and verify scenario artifacts.
+4. Improve automation or documentation only when it directly removes the active blocker.
+5. Add visual polish only after runtime graybox acceptance.
+
+Batch repeated placements by object type. Re-observe after modal, mode, camera, or window changes; do not screenshot every identical placement. After two failures with the same UI method, switch to accessibility navigation, keyboard navigation, filtering, or another verified control path.
 
 ## Stopping conditions
 

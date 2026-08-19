@@ -14,7 +14,7 @@
 ## 地形与氛围方向
 
 - 暂定晚夏雨后氛围：柔和阴天、湿润道路、收获季田块、红瓦农庄与远景雾蓝林带。
-- 等高距为 2 m，规划高程约 12–26 m；中央十字路口位于低鞍部，四角农业缓坡采用 180 度机会对称。
+- 等高距为 2 m，规划高程约 12–28 m；中央十字路口位于低鞍部，四角农业缓坡采用 180 度机会对称。
 - 高地只服务路线层次与空间辨识，不允许形成直压基地出口的优势射界。
 - 19 个分区使用点位 Voronoi 作为录入前预览；实际 sector polygon 仍需结合道路、掩体和补给清晰度在 World Builder 中调整。
 - 总平面预览见 [terrain-sector-masterplan.png](terrain-sector-masterplan.png)，数据见 [terrain-sector-plan.json](terrain-sector-plan.json)。

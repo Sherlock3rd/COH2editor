@@ -17,7 +17,7 @@
   "topography": {
     "baseElevationMeters": 14,
     "contourIntervalMeters": 2,
-    "expectedRangeMeters": [12, 26],
+    "expectedRangeMeters": [12, 28],
     "symmetry": "180-degree rotational opportunity symmetry",
     "controlForms": [
       { "id": "southwest_rise", "center": { "x": -102, "z": -76 }, "height": 24, "radius": 62 },

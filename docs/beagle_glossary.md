@@ -14,6 +14,8 @@
 | 地图工作副本 | 放入本项目 `workspace/maps/`、用于分析或修改的地图副本；不等同于游戏目录中的原文件 | 避免直接覆盖源地图 | [目录约定](workspace-guide.md#目录约定) |
 | 用户地图目录 | COH2 用户数据下的 `mods/scenarios` 目录，可能包含本地或订阅地图 | 定位地图来源与运行时数据 | [工作区指南](workspace-guide.md#已识别的本机入口) |
 | 生成产物 | 助手生成的报告、预览和临时导出，统一放入 `artifacts/` | 分离源数据与可重建文件 | [目录约定](workspace-guide.md#目录约定) |
+| 规划分区 | 以点位生成的录入前分区预览，用于检查覆盖、邻接与补给关系；不等同于 World Builder 最终 sector polygon | 地图灰盒与补给链设计 | [地形与分区计划](../workspace/maps/2p_codex_crossroads/terrain-sector-plan.json) |
+| 等高线 | 以固定高差连接同高点的地形规划线；当前地图使用 2 m 等高距 | 地形起伏、坡度与路线可读性检查 | [地形与分区总平面](../workspace/maps/2p_codex_crossroads/terrain-sector-masterplan.png) |
 | 可玩灰盒 | 已具备双方开局、领地补给、资源与 VP、有效路径，并通过实际游戏加载验证的最低美术地图版本 | 在美术细化前验证核心对局结构 | [1v1 地图规范](../spec/coh2-world-builder/playable-1v1-map-spec.md) |
 | 起始包 | World Builder 为一名玩家生成的一组起始领地、基地上下文、进入点及队伍对象，移动时应保持整体关系 | 配置双方出生与基地 | [对象目录](../skills/coh2-world-builder/references/gameplay-object-catalog.md#player-setup) |
 | 补给链 | 从己方 HQ 经相邻己方领地连接到资源点的领地网络；断开后资源收益受影响 | 设计领地、资源与 cutoff | [1v1 地图规范](../spec/coh2-world-builder/playable-1v1-map-spec.md#目标与经济) |

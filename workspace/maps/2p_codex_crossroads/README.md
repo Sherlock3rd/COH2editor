@@ -14,4 +14,8 @@
 
 - `layout.json`：灰盒规划数据。
 - `graybox-blueprint.svg`：俯视规划图。
+- `terrain-sector-plan.json`：等高线、分区、补给连接与氛围方向数据。
+- `terrain-sector-masterplan.png`：包含等高线、点位、规划分区和补给关系的总平面预览。
 - `acceptance-progress.md`：按项目验收规范记录的当前进度。
+
+![2p_codex_crossroads 地形与分区总平面](terrain-sector-masterplan.png)

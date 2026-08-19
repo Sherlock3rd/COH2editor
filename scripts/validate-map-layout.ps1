@@ -6,6 +6,13 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $layout = Get-Content -LiteralPath $LayoutPath -Raw -Encoding UTF8 | ConvertFrom-Json
+$terrainPlanPath = Join-Path (Split-Path -Parent $LayoutPath) 'terrain-sector-plan.json'
+$terrainPlan = if (Test-Path -LiteralPath $terrainPlanPath -PathType Leaf) {
+    Get-Content -LiteralPath $terrainPlanPath -Raw -Encoding UTF8 | ConvertFrom-Json
+}
+else {
+    $null
+}
 $failures = [System.Collections.Generic.List[string]]::new()
 
 function Test-InBounds {
@@ -88,6 +95,46 @@ foreach ($lane in @($layout.lanes)) {
     }
 }
 
+if ($terrainPlan) {
+    $allIds = @(
+        $layout.starts.id
+        $layout.victoryPoints.id
+        $layout.fuelPoints.id
+        $layout.munitionPoints.id
+        $layout.territoryPoints.id
+    )
+    $expectedSectorCount = @($allIds).Count
+    if ($terrainPlan.sectorPreview.sectorCount -ne $expectedSectorCount) {
+        $failures.Add("Sector preview count should be $expectedSectorCount, found $($terrainPlan.sectorPreview.sectorCount).")
+    }
+    if ($terrainPlan.topography.contourIntervalMeters -le 0) {
+        $failures.Add('Contour interval must be greater than zero.')
+    }
+    foreach ($edge in @($terrainPlan.supplyAdjacency)) {
+        if (@($edge).Count -ne 2) {
+            $failures.Add('Each supply adjacency entry must contain exactly two point IDs.')
+            continue
+        }
+        foreach ($id in @($edge)) {
+            if ($id -notin $allIds) {
+                $failures.Add("Supply adjacency references unknown point '$id'.")
+            }
+        }
+    }
+    $forms = @($terrainPlan.topography.controlForms)
+    foreach ($form in $forms) {
+        $pair = $forms | Where-Object {
+            $_.center.x -eq -$form.center.x -and
+            $_.center.z -eq -$form.center.z -and
+            $_.height -eq $form.height -and
+            $_.radius -eq $form.radius
+        } | Select-Object -First 1
+        if (-not $pair) {
+            $failures.Add("Topography form '$($form.id)' has no matching 180-degree counterpart.")
+        }
+    }
+}
+
 $summary = [pscustomobject]@{
     Scenario = $layout.scenarioName
     Status = $layout.status
@@ -97,6 +144,9 @@ $summary = [pscustomobject]@{
     MunitionPoints = @($layout.munitionPoints).Count
     TerritoryPoints = @($layout.territoryPoints).Count
     Lanes = @($layout.lanes).Count
+    PlannedSectors = if ($terrainPlan) { $terrainPlan.sectorPreview.sectorCount } else { 'N/A' }
+    ContourIntervalMeters = if ($terrainPlan) { $terrainPlan.topography.contourIntervalMeters } else { 'N/A' }
+    SupplyLinks = if ($terrainPlan) { @($terrainPlan.supplyAdjacency).Count } else { 'N/A' }
     Failures = $failures.Count
 }
 

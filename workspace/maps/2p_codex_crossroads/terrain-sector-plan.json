@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "scenarioName": "2p_codex_crossroads",
+  "status": "visual_masterplan_not_worldbuilder_geometry",
+  "atmosphere": {
+    "workingDirection": "late-summer European countryside after light rain",
+    "palette": ["muted meadow green", "harvest ochre", "wet earth", "aged red tile", "misty blue-grey"],
+    "lighting": "soft overcast daylight with restrained warm breaks around the village",
+    "surfaceNotes": [
+      "wet compacted soil on sunken farm lanes",
+      "subtle puddle sheen on the central village road",
+      "dry orchard grass beneath tree rows",
+      "soft distant tree line outside the playable boundary"
+    ],
+    "approvalState": "provisional art direction; does not alter approved gameplay structure"
+  },
+  "topography": {
+    "baseElevationMeters": 14,
+    "contourIntervalMeters": 2,
+    "expectedRangeMeters": [12, 26],
+    "symmetry": "180-degree rotational opportunity symmetry",
+    "controlForms": [
+      { "id": "southwest_rise", "center": { "x": -102, "z": -76 }, "height": 24, "radius": 62 },
+      { "id": "northeast_rise", "center": { "x": 102, "z": 76 }, "height": 24, "radius": 62 },
+      { "id": "southeast_orchard_roll", "center": { "x": 105, "z": -112 }, "height": 21, "radius": 54 },
+      { "id": "northwest_orchard_roll", "center": { "x": -105, "z": 112 }, "height": 21, "radius": 54 },
+      { "id": "central_crossroads_saddle", "center": { "x": 0, "z": 0 }, "height": 12, "radius": 70 }
+    ],
+    "gameplayRules": [
+      "No contour form may create a dominant firing position into a base exit.",
+      "Main and secondary vehicle routes stay on gentle grades in the first graybox.",
+      "Contour lines are a planning preview; World Builder terrain height and pathing remain authoritative."
+    ]
+  },
+  "sectorPreview": {
+    "method": "Voronoi preview clipped to the 320 x 320 playable area",
+    "meaning": "Each preview cell is associated with its start or capture point; final World Builder sector polygons may be adjusted for roads, cover and supply clarity.",
+    "sectorCount": 19,
+    "categories": {
+      "base": 2,
+      "victory": 3,
+      "fuel": 2,
+      "munition": 2,
+      "standardTerritory": 10
+    }
+  },
+  "supplyAdjacency": [
+    ["start_p1", "territory_p1_rear_left"],
+    ["start_p1", "territory_p1_rear_right"],
+    ["territory_p1_rear_left", "territory_p1_flank_left"],
+    ["territory_p1_rear_left", "fuel_p1_side"],
+    ["territory_p1_rear_right", "territory_p1_flank_right"],
+    ["territory_p1_rear_right", "munition_p1_side"],
+    ["territory_p1_flank_left", "vp_left"],
+    ["territory_p1_flank_right", "vp_right"],
+    ["fuel_p1_side", "territory_p1_cutoff"],
+    ["munition_p1_side", "territory_p1_cutoff"],
+    ["territory_p1_cutoff", "vp_center"],
+    ["start_p2", "territory_p2_rear_left"],
+    ["start_p2", "territory_p2_rear_right"],
+    ["territory_p2_rear_left", "territory_p2_flank_left"],
+    ["territory_p2_rear_left", "munition_p2_side"],
+    ["territory_p2_rear_right", "territory_p2_flank_right"],
+    ["territory_p2_rear_right", "fuel_p2_side"],
+    ["territory_p2_flank_left", "vp_left"],
+    ["territory_p2_flank_right", "vp_right"],
+    ["munition_p2_side", "territory_p2_cutoff"],
+    ["fuel_p2_side", "territory_p2_cutoff"],
+    ["territory_p2_cutoff", "vp_center"]
+  ],
+  "laneAtmosphere": [
+    {
+      "lane": "lane_left",
+      "name": "林篱农路",
+      "visualIdentity": "sunken wet track, clipped hedgerows, stone field boundaries",
+      "combatRead": "close-to-mid range with deliberate breach gaps"
+    },
+    {
+      "lane": "lane_center",
+      "name": "村庄十字路口",
+      "visualIdentity": "worn paved road, farmstead roofs, muddy verges and open crossing",
+      "combatRead": "main combined-arms axis with broken long sightlines"
+    },
+    {
+      "lane": "lane_right",
+      "name": "果园乡道",
+      "visualIdentity": "orchard rows, pale grass, ditch edges and a curving country road",
+      "combatRead": "mobile flank with alternating open and screened pockets"
+    }
+  ]
+}

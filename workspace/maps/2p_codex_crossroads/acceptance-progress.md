@@ -14,12 +14,15 @@
 - [x] 用户确认欧洲乡村主题与默认三路结构。
 - [x] 三路已分配林篱农路、村庄十字路口和果园乡道的战斗职责。
 - [x] 已记录掩体、LOS、建筑和车辆通道的灰盒约束。
+- [x] 已完成 2 m 间隔等高线方向、19 个规划分区与补给相邻关系。
+- [x] 已完成欧洲乡村雨后晚夏的暂定氛围方向和平面图设计。
 
 ## 尚未完成，不能据此宣称可玩
 
 - [ ] World Builder 场景与 `.sgb`。
 - [ ] 双方完整起始包、基地领地和 entry points。
 - [ ] 实际 sector polygon、相邻关系与补给链。
+- [ ] 将规划等高线录入 World Builder 并复核坡度与车辆路径。
 - [ ] interactivity stage、impass map、软边与路径网格。
 - [ ] 道路、掩体、LOS blocker 和车辆通道。
 - [ ] `.info`、`.options`、`.scenariomarker`、`_id.scar`、预览等生成产物。

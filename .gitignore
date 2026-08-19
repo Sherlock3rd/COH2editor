@@ -1,0 +1,28 @@
+# Generated artifacts
+artifacts/exports/*
+artifacts/previews/*
+artifacts/reports/*
+!artifacts/exports/.gitkeep
+!artifacts/previews/.gitkeep
+!artifacts/reports/.gitkeep
+
+# Local references can be large or proprietary
+workspace/references/*
+!workspace/references/.gitkeep
+
+# Machine-specific environment paths
+config/environment.json
+
+# Local caches and temporary files
+.cache/
+temp/
+*.tmp
+*.bak
+*.log
+
+# Editor and OS metadata
+.vs/
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini

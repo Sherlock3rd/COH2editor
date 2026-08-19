@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="900" viewBox="0 0 900 900">
+  <rect width="900" height="900" fill="#1b1f24"/>
+  <rect x="90" y="90" width="720" height="720" fill="#c2b18b" stroke="#e6d5aa" stroke-width="4"/>
+  <rect x="150" y="150" width="600" height="600" fill="#a99b7a" stroke="#f1e0ad" stroke-width="3" stroke-dasharray="10 8"/>
+  <g opacity="0.72">
+    <path d="M180 300 L290 330 L220 420 L285 485 L185 555" fill="none" stroke="#355b31" stroke-width="18" stroke-dasharray="35 12"/>
+    <path d="M720 300 L610 330 L680 420 L615 485 L715 555" fill="none" stroke="#6f7d39" stroke-width="16" stroke-dasharray="18 10"/>
+    <g fill="#876d4d" stroke="#3d2d1f" stroke-width="4">
+      <rect x="368" y="365" width="42" height="30" transform="rotate(-18 389 380)"/>
+      <rect x="490" y="505" width="42" height="30" transform="rotate(-18 511 520)"/>
+    </g>
+  </g>
+  <g fill="none" stroke-linecap="round">
+    <polyline points="450,709 319,647 234,553 253,450 234,347 319,253 450,191" stroke="#668f62" stroke-width="28" opacity="0.75"/>
+    <polyline points="450,709 450,581 450,450 450,319 450,191" stroke="#77736b" stroke-width="38" opacity="0.85"/>
+    <polyline points="450,709 581,647 666,553 647,450 666,347 581,253 450,191" stroke="#668f62" stroke-width="28" opacity="0.75"/>
+  </g>
+  <g font-family="Segoe UI, sans-serif" font-size="16" text-anchor="middle">
+    <g fill="#ffffff" stroke="#111" stroke-width="3">
+      <circle cx="450" cy="709" r="22"/><circle cx="450" cy="191" r="22"/>
+    </g>
+    <text x="450" y="715" fill="#111">P1</text><text x="450" y="197" fill="#111">P2</text>
+    <g fill="#f2d24b" stroke="#5f4d00" stroke-width="3">
+      <polygon points="253,430 270,450 253,470 236,450"/><polygon points="450,430 467,450 450,470 433,450"/><polygon points="647,430 664,450 647,470 630,450"/>
+    </g>
+    <g fill="#d76a45" stroke="#5b2516" stroke-width="3">
+      <circle cx="272" cy="553" r="15"/><circle cx="628" cy="347" r="15"/>
+    </g>
+    <g fill="#5fa5d9" stroke="#163e5b" stroke-width="3">
+      <rect x="613" y="538" width="30" height="30"/><rect x="257" y="332" width="30" height="30"/>
+    </g>
+    <g fill="#d8d0b8" stroke="#4d493f" stroke-width="2">
+      <circle cx="366" cy="666" r="10"/><circle cx="534" cy="666" r="10"/>
+      <circle cx="234" cy="591" r="10"/><circle cx="666" cy="591" r="10"/>
+      <circle cx="347" cy="497" r="10"/><circle cx="553" cy="403" r="10"/>
+      <circle cx="234" cy="309" r="10"/><circle cx="666" cy="309" r="10"/>
+      <circle cx="366" cy="234" r="10"/><circle cx="534" cy="234" r="10"/>
+    </g>
+  </g>
+  <g font-family="Segoe UI, sans-serif" fill="#f4f4f4">
+    <text x="90" y="55" font-size="28" font-weight="600">2p_codex_crossroads — European countryside 1v1 graybox</text>
+    <text x="90" y="842" font-size="17">Diamond: VP   Orange circle: Fuel   Blue square: Munition   Small circle: Territory</text>
+    <text x="90" y="872" font-size="15" fill="#c9c9c9">Left: hedgerow lane   Center: village road   Right: orchard lane   Not runtime-validated.</text>
+  </g>
+</svg>

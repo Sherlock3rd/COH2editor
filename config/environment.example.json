@@ -1,0 +1,9 @@
+{
+  "gameRoot": "<COH2 installation directory>",
+  "worldBuilderExecutable": "<COH2 installation directory>\\WorldBuilder_CoH_2.exe",
+  "archiveExecutable": "<COH2 installation directory>\\Archive.exe",
+  "userDataRoot": "<Documents>\\My Games\\Company of Heroes 2",
+  "userScenarioRoot": "<Documents>\\My Games\\Company of Heroes 2\\mods\\scenarios",
+  "userLogRoot": "<Documents>\\My Games\\Company of Heroes 2\\LogFiles",
+  "steamAppManifest": "<Steam library>\\steamapps\\appmanifest_231430.acf"
+}

@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "scenarioName": "2p_codex_crossroads",
+  "status": "planning_draft_not_sgb",
+  "confirmedDesign": {
+    "playerMode": "1v1_default",
+    "theme": "European countryside",
+    "laneStructure": "three lanes"
+  },
+  "coordinateSystem": {
+    "description": "Planning coordinates centered on the map; verify against World Builder before placement.",
+    "horizontalAxis": "x",
+    "verticalAxis": "z",
+    "unit": "meter"
+  },
+  "terrain": {
+    "width": 384,
+    "height": 384,
+    "cellSize": 1
+  },
+  "playableArea": {
+    "minX": -160,
+    "maxX": 160,
+    "minZ": -160,
+    "maxZ": 160
+  },
+  "starts": [
+    { "id": "start_p1", "player": 1, "team": 1, "x": 0, "z": -138, "facing": "north" },
+    { "id": "start_p2", "player": 2, "team": 2, "x": 0, "z": 138, "facing": "south" }
+  ],
+  "victoryPoints": [
+    { "id": "vp_left", "x": -105, "z": 0 },
+    { "id": "vp_center", "x": 0, "z": 0 },
+    { "id": "vp_right", "x": 105, "z": 0 }
+  ],
+  "fuelPoints": [
+    { "id": "fuel_p1_side", "x": -95, "z": -55 },
+    { "id": "fuel_p2_side", "x": 95, "z": 55 }
+  ],
+  "munitionPoints": [
+    { "id": "munition_p1_side", "x": 95, "z": -55 },
+    { "id": "munition_p2_side", "x": -95, "z": 55 }
+  ],
+  "territoryPoints": [
+    { "id": "territory_p1_rear_left", "x": -45, "z": -115 },
+    { "id": "territory_p1_rear_right", "x": 45, "z": -115 },
+    { "id": "territory_p1_flank_left", "x": -115, "z": -75 },
+    { "id": "territory_p1_flank_right", "x": 115, "z": -75 },
+    { "id": "territory_p1_cutoff", "x": -55, "z": -25 },
+    { "id": "territory_p2_cutoff", "x": 55, "z": 25 },
+    { "id": "territory_p2_flank_left", "x": -115, "z": 75 },
+    { "id": "territory_p2_flank_right", "x": 115, "z": 75 },
+    { "id": "territory_p2_rear_left", "x": -45, "z": 115 },
+    { "id": "territory_p2_rear_right", "x": 45, "z": 115 }
+  ],
+  "lanes": [
+    {
+      "id": "lane_left",
+      "theme": "sunken farm lane and hedgerows",
+      "role": "infantry_flank_with_secondary_vehicle_route_to_verify",
+      "points": [
+        { "x": 0, "z": -138 }, { "x": -70, "z": -105 }, { "x": -115, "z": -55 },
+        { "x": -105, "z": 0 }, { "x": -115, "z": 55 }, { "x": -70, "z": 105 }, { "x": 0, "z": 138 }
+      ]
+    },
+    {
+      "id": "lane_center",
+      "theme": "village road and open crossroads",
+      "role": "main_vehicle_route_and_primary_vp_front",
+      "points": [
+        { "x": 0, "z": -138 }, { "x": 0, "z": -70 }, { "x": 0, "z": 0 },
+        { "x": 0, "z": 70 }, { "x": 0, "z": 138 }
+      ]
+    },
+    {
+      "id": "lane_right",
+      "theme": "orchard edge and country road",
+      "role": "mobile_flank_with_secondary_vehicle_route_to_verify",
+      "points": [
+        { "x": 0, "z": -138 }, { "x": 70, "z": -105 }, { "x": 115, "z": -55 },
+        { "x": 105, "z": 0 }, { "x": 115, "z": 55 }, { "x": 70, "z": 105 }, { "x": 0, "z": 138 }
+      ]
+    }
+  ],
+  "combatZones": [
+    {
+      "id": "left_hedgerow_fight",
+      "center": { "x": -105, "z": 0 },
+      "lane": "lane_left",
+      "purpose": "close-to-mid infantry flanking around the left VP",
+      "coverPlan": "staggered hedgerows and low stone walls with at least two deliberate gaps",
+      "losPlan": "broken sightlines; no continuous firing lane toward either base",
+      "vehicleRule": "one readable through-route plus one wider turning pocket"
+    },
+    {
+      "id": "central_village_crossroads",
+      "center": { "x": 0, "z": 0 },
+      "lane": "lane_center",
+      "purpose": "main combined-arms contest around the central VP",
+      "coverPlan": "limited green cover at diagonal approaches; open/red-risk crossing at the VP",
+      "losPlan": "two non-garrison LOS blockers offset from the road axis",
+      "vehicleRule": "continuous main road with no decorative choke narrower than the planned road"
+    },
+    {
+      "id": "right_orchard_fight",
+      "center": { "x": 105, "z": 0 },
+      "lane": "lane_right",
+      "purpose": "mobile flank and medium-range engagements around the right VP",
+      "coverPlan": "spaced orchard rows, fences and ditches that allow lateral movement",
+      "losPlan": "partial foliage screens; preserve readable firing pockets",
+      "vehicleRule": "country-road route and a separate infantry gap through the orchard edge"
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "village_cluster_northwest",
+      "x": -35,
+      "z": 35,
+      "type": "small_farmstead_cluster",
+      "garrisonPolicy": "maximum one candidate garrison after base-fire and dominance checks"
+    },
+    {
+      "id": "village_cluster_southeast",
+      "x": 35,
+      "z": -35,
+      "type": "small_farmstead_cluster",
+      "garrisonPolicy": "rotational counterpart; maximum one candidate garrison"
+    },
+    {
+      "id": "left_field_boundary",
+      "x": -125,
+      "z": 0,
+      "type": "hedgerow_and_stone_wall"
+    },
+    {
+      "id": "right_orchard_boundary",
+      "x": 125,
+      "z": 0,
+      "type": "orchard_and_fence"
+    }
+  ],
+  "terrainPlan": {
+    "baseGround": "muted summer grass and compacted soil",
+    "mainRoad": "north-south village road through lane_center",
+    "secondaryRoads": [
+      "sunken farm lane through lane_left",
+      "country road beside the orchard in lane_right"
+    ],
+    "heightRule": "gentle agricultural undulation only; no unverified combat-dominating high ground",
+    "softEdge": "dense field boundary, distant tree line and non-interactive farm dressing outside the playable area"
+  },
+  "designNotes": [
+    "Uses the project default 384x384 terrain and 320x320 playable area.",
+    "Uses three lanes and three victory points from the approved project spec.",
+    "Gameplay points use 180-degree rotational symmetry for the first graybox timing pass.",
+    "European countryside and the default three-lane structure were confirmed by the user on 2026-08-19.",
+    "Exact asset paths, cover stamps, building garrison status, sector polygons and supply adjacency remain subject to World Builder verification."
+  ]
+}

@@ -6,3 +6,10 @@
 *.rgt filter=lfs diff=lfs merge=lfs -text
 *.rgo filter=lfs diff=lfs merge=lfs -text
 *.rec filter=lfs diff=lfs merge=lfs -text
+
+# World Builder sidecars must remain byte-identical across machines.
+*.info -text
+*.options -text
+*.prefabdata -text
+*.scenariomarker -text
+*_ID.scar -text

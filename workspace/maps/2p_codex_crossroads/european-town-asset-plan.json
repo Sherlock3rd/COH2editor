@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "scenarioName": "2p_codex_crossroads",
+  "coordinateSystem": "World Builder centered x,z meters",
+  "artDirection": "late-summer Ardennes small town after light rain",
+  "buildingPlacements": [
+    {"id":"church_nw","asset":"stone02_church_4x5x3_03","x":-46,"z":46,"rotation":105,"role":"town landmark; keep non-dominant"},
+    {"id":"west_house_n","asset":"plaster01_3x3x3_02","x":-34,"z":22,"rotation":92,"role":"west street frontage"},
+    {"id":"west_house_s","asset":"plaster01_2x2x2_01","x":-36,"z":-18,"rotation":88,"role":"west street frontage"},
+    {"id":"west_barn","asset":"stone02_barn_3x3x2_01","x":-43,"z":-50,"rotation":70,"role":"southwest farm court"},
+    {"id":"west_shed","asset":"wood01_shed_1x2x1_01","x":-24,"z":-52,"rotation":20,"role":"southwest farm annex"},
+    {"id":"east_multisub_s","asset":"multisub_3x3x2_02","x":36,"z":-39,"rotation":-82,"role":"east street anchor"},
+    {"id":"east_house_c","asset":"plaster02_2x2x2_01","x":34,"z":-10,"rotation":-92,"role":"east street frontage"},
+    {"id":"east_house_n","asset":"plaster01_3x3x3_04","x":35,"z":25,"rotation":-88,"role":"east street frontage"},
+    {"id":"east_stone_n","asset":"stone01_4x3x2_02","x":42,"z":55,"rotation":-70,"role":"north farm court"},
+    {"id":"east_shed_n","asset":"wood01_shed_1x2x1_02","x":23,"z":53,"rotation":160,"role":"north farm annex"},
+    {"id":"farm_sw_house","asset":"wood01_house_2x3x2_01","x":-112,"z":-112,"rotation":28,"role":"southwest agricultural ecology"},
+    {"id":"farm_sw_shed","asset":"wood01_shed_2x2x2_01","x":-91,"z":-124,"rotation":-14,"role":"southwest agricultural ecology"},
+    {"id":"farm_sw_store","asset":"plaster01_2x2x3_01","x":-126,"z":-91,"rotation":62,"role":"southwest agricultural ecology"},
+    {"id":"farm_ne_house","asset":"stone02_2x2x2_01","x":112,"z":112,"rotation":-152,"role":"northeast agricultural ecology"},
+    {"id":"farm_ne_shed","asset":"wood01_shed_2x3x2_01","x":91,"z":124,"rotation":166,"role":"northeast agricultural ecology"},
+    {"id":"farm_ne_store","asset":"plaster01_2x2x2_02","x":126,"z":91,"rotation":-118,"role":"northeast agricultural ecology"}
+  ],
+  "terrainForms": [
+    {"id":"central_saddle","x":0,"z":0,"targetHeight":12,"radius":70,"rule":"open center and smooth main road"},
+    {"id":"southwest_rise","x":-102,"z":-76,"targetHeight":24,"radius":62,"rule":"terraced field edge; no base firing line"},
+    {"id":"northeast_rise","x":102,"z":76,"targetHeight":24,"radius":62,"rule":"rotational opportunity counterpart"},
+    {"id":"southeast_roll","x":105,"z":-112,"targetHeight":21,"radius":54,"rule":"orchard roll"},
+    {"id":"northwest_roll","x":-105,"z":112,"targetHeight":21,"radius":54,"rule":"orchard roll counterpart"}
+  ],
+  "boundaryRecipes": [
+    {"id":"left_hedgerow","asset":"wild_hedge_01..04","zone":"x=-132..-92,z=-78..78","segments":8,"gapMeters":"8..14","combatPurpose":"broken close-range flank"},
+    {"id":"left_stone_walls","asset":"stone_low_rough + rough_m_gate_01","zone":"x=-85..-35,z=-45..45","segments":5,"gapMeters":"10..14","combatPurpose":"mark village-field transition"},
+    {"id":"right_orchard","asset":"orchard_s_ardennes_01_summer","zone":"x=82..138,z=-80..80","rows":5,"spacingMeters":12,"combatPurpose":"alternating screened and open pockets"},
+    {"id":"right_field_fences","asset":"fieldfence_01 + fieldfence_gate_01/02","zone":"x=65..130,z=-95..95","segments":6,"gapMeters":"10..16","combatPurpose":"readable sector transitions without hard choke"},
+    {"id":"town_yards","asset":"old_world_low_horizontal_fence_01/02 + farmfence_01/02","zone":"central town building courts","segments":8,"gapMeters":"8..12","combatPurpose":"courtyard identity and cover"}
+  ],
+  "dressingClusters": [
+    {"id":"sw_farm_dressing","center":{"x":-108,"z":-108},"assets":["hay_bail_square","plow_01","wood_trough","old_world_single_axle_horse_cart"]},
+    {"id":"ne_farm_dressing","center":{"x":108,"z":108},"assets":["haystack_m_01","tractor_01","wood_trough","belgian_farm_truck"]},
+    {"id":"town_market_dressing","center":{"x":18,"z":18},"assets":["crates_wood_l_01","milk_canisters_01","stand_01","wagon_02"]}
+  ],
+  "noBuildZones": [
+    {"center":{"x":0,"z":0},"radius":16,"reason":"central VP approaches"},
+    {"center":{"x":0,"z":-138},"radius":30,"reason":"P1 build and exit space"},
+    {"center":{"x":0,"z":138},"radius":30,"reason":"P2 build and exit space"}
+  ]
+}

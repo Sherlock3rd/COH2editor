@@ -1,7 +1,7 @@
 minimap_size =  
 {
 	768,
-	614,
+	768,
 }
 uses_ice = false
 visible_in_lobby = true

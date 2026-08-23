@@ -1,0 +1,8 @@
+[
+  { "id": 10000, "blueprintIndex": 0, "expectedX": 0, "expectedY": 10, "expectedZ": 55,  "x": 0,   "y": 10, "z": 163 },
+  { "id": 10001, "blueprintIndex": 0, "expectedX": 0, "expectedY": 10, "expectedZ": -55, "x": 0,   "y": 10, "z": -163 },
+  { "id": 10002, "blueprintIndex": 1, "expectedX": 0, "expectedY": 10, "expectedZ": 30,  "x": 0,   "y": 10, "z": 138 },
+  { "id": 10003, "blueprintIndex": 3, "expectedX": -25, "expectedY": 10, "expectedZ": 30, "x": -25, "y": 10, "z": 138 },
+  { "id": 10004, "blueprintIndex": 1, "expectedX": 0, "expectedY": 10.28636, "expectedZ": -30, "x": 0, "y": 10, "z": -138 },
+  { "id": 10005, "blueprintIndex": 3, "expectedX": 25, "expectedY": 10.15499, "expectedZ": -30, "x": 25, "y": 10, "z": -138 }
+]

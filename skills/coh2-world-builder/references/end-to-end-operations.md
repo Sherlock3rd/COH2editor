@@ -55,7 +55,7 @@
 
 1. `victory_point`
 2. `territory_fuel_point_mp`
-3. `territory_munition_point_mp`
+3. `territory_munitions_point_mp`
 4. `territory_point_mp`
 
 同一对象类型应一次选中、连续放完，再进行一次复核；不要每放一个对象就重新展开目录或截图。
@@ -126,3 +126,7 @@
 - 顶部 `OBJ` 是物件可见性开关；放置后全局看不到实体时，先检查该开关，不要重复放置。
 - 保存弹出 `More than one sector creator entity` 时，启用 Selection Information 的 Filter，按 `victory_point` 或 `territory_point_mp` 过滤；点击点位读取实体 ID，只删除错误列表明确列出的重复 ID，然后立即重新保存。
 - 保存成功的判据是：`Map Setup Errors`、`Failed to save scenario`、`Error Saving file` 三层提示均未出现；第一层提示关闭后仍需等待后续错误提示。
+- 屏幕拖动、移动 gizmo 或光标位置不能证明实体坐标已改变；必须用 Selection Information、保存后的 `.info` 或二进制实体坐标复核。
+- 删除 sector creator 后必须先执行 `Convert empty territory to null`，再保存；否则残留空 sector 会造成颜色分区和昨夜版本不一致。
+- 普通 Save 禁用或无写入时，使用 Save As 生成新 basename；重新打开新文件并通过 Territory Editor 处理数、`.info` 与时间戳验证后，才可作为规范版本。
+- 二进制修复只能用于恢复明确坐标或复制已知实体模板；修复后必须立即由 World Builder 打开并 Save As 规范化，不能直接把手工修改的 `.sgb` 当最终交付。

@@ -20,6 +20,7 @@ Read [references/source-index.md](references/source-index.md) when researching o
 - For every World Builder implementation or repair, read [references/end-to-end-operations.md](references/end-to-end-operations.md) first; it defines the complete G0-G7 workflow, UI batching, recovery, and efficiency rules.
 - For a new or repaired 1v1 map, read [references/fast-build-workflow.md](references/fast-build-workflow.md) and `../../spec/coh2-world-builder/playable-1v1-map-spec.md`.
 - For UI operation or shortcuts, read [references/world-builder-controls.md](references/world-builder-controls.md).
+- For the verified local toolbar map, Ardennes asset paths, and `2p_codex_crossroads` batch-placement coordinates, read [references/world-builder-efficiency-atlas.md](references/world-builder-efficiency-atlas.md).
 - For required gameplay entities, read [references/gameplay-object-catalog.md](references/gameplay-object-catalog.md).
 - Before claiming completion, read `../../spec/coh2-world-builder/acceptance-spec.md`.
 
@@ -53,6 +54,12 @@ Report progress using the G0-G7 stages defined in the operations manual. Include
 5. Add visual polish only after runtime graybox acceptance.
 
 Batch repeated placements by object type. Re-observe after modal, mode, camera, or window changes; do not screenshot every identical placement. After two failures with the same UI method, switch to accessibility navigation, keyboard navigation, filtering, or another verified control path.
+
+Prefer installed-archive evidence for exact asset names. `Archive.exe -a <AttribArchive.sga> -l` can enumerate EBP paths without extracting the archive; record the verified path once and reuse it instead of rediscovering the object tree during editing.
+
+For an existing scenario that already contains a verified official entity of the desired type, `scripts/clone-sgb-entities.ps1` may batch-clone that exact entity chunk from a reviewed JSON placement list. Before this operation, back up the source `.sgb`; afterwards, reopen and save it in World Builder, rebuild territory if gameplay creators changed, export the `.sga`, and rerun the in-game checks. This shortcut is only for official assets already present in the scenario; it must never introduce placeholder cubes or guessed blueprint names.
+
+When sculpting base terrain, use overlapping maximum-size `Set Value` stamps to create a broad spawn platform and exit apron, then smooth only the seams. The installed editor's effective maximum brush is about 64 map units, so large safe areas require tiled stamps rather than one assumed giant brush. Preserve tactical hills outside the platform, and inspect both spawn sides from the runtime camera because the editor's overhead view can hide bowls and occluding ridges.
 
 ## Stopping conditions
 

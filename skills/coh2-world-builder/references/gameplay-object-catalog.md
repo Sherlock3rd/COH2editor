@@ -14,7 +14,7 @@ When `Generate Starting Positions` succeeds, inspect and move the complete gener
 
 - `territory_point_mp`: standard strategic/resource territory point.
 - `territory_fuel_point_mp`: fuel territory point.
-- `territory_munition_point_mp`: munition territory point.
+- `territory_munitions_point_mp`: munition territory point; this plural spelling is verified in the installed COH2 editor/archive and current scenario.
 - `victory_point`: victory objective used by VP win conditions.
 
 ## Placement invariants

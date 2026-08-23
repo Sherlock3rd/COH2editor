@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "scenarioName": "2p_codex_crossroads",
-  "status": "planning_draft_not_sgb",
+  "status": "implemented_runtime_smoke_passed",
   "confirmedDesign": {
     "playerMode": "1v1_default",
     "theme": "European countryside",

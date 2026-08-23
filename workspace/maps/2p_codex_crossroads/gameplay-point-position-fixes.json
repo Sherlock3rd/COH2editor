@@ -1,0 +1,4 @@
+[
+  { "id": 10058, "blueprintIndex": 0, "expectedX": -69.91826, "expectedY": 10, "expectedZ": -34.07516, "x": -95, "y": 10, "z": -55 },
+  { "id": 10059, "blueprintIndex": 0, "expectedX": 86.82037, "expectedY": 10, "expectedZ": 41.97748, "x": 95, "y": 10, "z": 55 }
+]

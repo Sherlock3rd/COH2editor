@@ -2,6 +2,8 @@
 
 这是 COH2 1v1 欧洲小镇战斗地图。当前 World Builder/运行时 basename 为 `2p_codex_crossroads_rebuild`；仓库 `scenario/2p_codex_crossroads.sgb` 与本机最终源 `.sgb` 内容完全一致，`package/2p_codex_crossroads_rebuild.sga` 是 2026-08-23 实机验收使用的封包。
 
+![2p_codex_crossroads 实机战术地图预览](preview.jpg)
+
 ## 当前状态
 
 - 已完成双人起始包、两端基地领地和 entry point；实机双方都能离开基地。

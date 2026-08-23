@@ -115,3 +115,4 @@
 - `.info` 是 World Builder 生成物，不允许只改 `scenarioname` 来制造新版本名。显示名、SGB 内部场景身份、basename、TOC 路径不一致时，游戏可能挂载 SGA 却不把地图登记到列表。
 - 交付前把源 bundle 和最终 SGA 复制进仓库，再逐文件计算 SHA-256；仓库中的 SGB 必须与 World Builder 当前源 SGB 同哈希，仓库中的 SGA 必须与运行目录活动 SGA 同哈希。文本 sidecar 使用 `.gitattributes` 的 `-text` 保持跨电脑字节一致。
 - 路网和植被的全局预览必须单独提交到 `evidence/`。预览至少能读出一条连续主干、两侧支路、镇中心建筑组团、果园/林篱和边缘高树带；不能用旧版环路截图或编辑器局部截图代替。
+- 地表验收不能依赖领地色块。Texture Tile 至少保留三种在普通俯视图中可辨的正式材质：基础土、草地/农田、道路/镇区硬地。本图已实测可用 `dirt\\dirt_base`、`grass\\grass_with_dirt_patches`、`urban\\cobblestone_02_muddy`；使用 `Exclusive` 清旧蒙版后必须重画非底层材质，再关闭 Fog 执行 `File > Save Overhead Map` 验证。

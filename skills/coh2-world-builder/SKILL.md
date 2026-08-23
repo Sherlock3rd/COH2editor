@@ -57,6 +57,12 @@ Batch repeated placements by object type. Re-observe after modal, mode, camera, 
 
 Prefer installed-archive evidence for exact asset names. `Archive.exe -a <AttribArchive.sga> -l` can enumerate EBP paths without extracting the archive; record the verified path once and reuse it instead of rediscovering the object tree during editing.
 
+Treat packaging as a single-writer operation. Before export or `Archive.exe -c`, close every `RelicCoH2.exe` and duplicate World Builder process, then verify that exactly one target `.sga` remains live in `Documents\My Games\Company of Heroes 2\mods\scenarios`. Test the built archive with `Archive.exe -t` and list it with `-l`; the listed `.sgb`, `.info`, and `_mm.tga` sizes must match the intended source bundle.
+
+Do not rename a scenario by editing only the generated `.info`. The front-end name, World Builder Scenario Properties identity, basename, archive TOC path, and packaged sidecars must remain a coherent set. If a new display identity is required, change it in World Builder and regenerate the sidecars; a hand-edited `.info` can be syntactically valid yet be skipped by the scenario indexer.
+
+For this project's 320 × 320 playable 1v1 maps, the front-end minimap artifact is a 768 × 768, 32-bit, uncompressed BGRA TGA with opaque alpha. Verify the 18-byte header and exact byte size `2,359,314` before packaging. A PNG renamed to TGA, a 384 × 384 export, or a minimap with transparent alpha is not acceptable evidence.
+
 For an existing scenario that already contains a verified official entity of the desired type, `scripts/clone-sgb-entities.ps1` may batch-clone that exact entity chunk from a reviewed JSON placement list. Before this operation, back up the source `.sgb`; afterwards, reopen and save it in World Builder, rebuild territory if gameplay creators changed, export the `.sga`, and rerun the in-game checks. This shortcut is only for official assets already present in the scenario; it must never introduce placeholder cubes or guessed blueprint names.
 
 When sculpting base terrain, use overlapping maximum-size `Set Value` stamps to create a broad spawn platform and exit apron, then smooth only the seams. The installed editor's effective maximum brush is about 64 map units, so large safe areas require tiled stamps rather than one assumed giant brush. Preserve tactical hills outside the platform, and inspect both spawn sides from the runtime camera because the editor's overhead view can hide bowls and occluding ridges.

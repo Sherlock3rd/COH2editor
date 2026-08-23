@@ -20,7 +20,11 @@
 
 - [ ] `.sgb`、`.info`、`.options`、`.scenariomarker`、`_id.scar` 等必需产物存在。
 - [ ] `_mm.tga`/预览与 top-down 产物按当前发布路径生成。
+- [ ] 320 × 320 地图的 `_mm.tga` 为 768 × 768、32-bit 未压缩 BGRA、全不透明，文件大小为 `2,359,314` bytes。
+- [ ] World Builder 场景身份、`.info` 的 `scenarioname`、basename 与归档 TOC 路径一致；未通过手改 `.info` 制造伪版本身份。
 - [ ] 场景能由 Mod Builder/目标模块正确构建或打包。
+- [ ] `Archive.exe -t` 通过，且 `Archive.exe -l` 中关键文件尺寸与当前源 bundle 一致。
+- [ ] 仓库 SGB 与编辑源 SGB 的 SHA-256 一致；仓库 SGA 与运行目录活动 SGA 的 SHA-256 一致。
 
 ## C. 游戏内 1v1 验收
 

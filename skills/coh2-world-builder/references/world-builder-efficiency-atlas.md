@@ -106,3 +106,12 @@
 - 清除历史 alpha 的可验证方法是选择基础地表层，在 `Exclusive` 模式下用覆盖全可玩区的密集笔触重绘基础层；清除后必须另存新 basename、重开并生成 `_mm.tga` 验证道路确实消失。
 - Terrain Tile 工具的总锁、图层可见复选框、调试颜色和 Spline 默认纹理是不同控件。未绑定默认纹理的 Texture Spline 会静默不生成可见道路；不得把控制点点击或无错误提示当成创建成功。
 - 自动化长拖动可能只留下端点笔触。应改用按设计折线采样的短划/密集笔触，并在每条主街、侧翼路完成后立刻生成俯视图，拒绝硬三角、硬菱形和与目标点无关的闭环。
+
+## 九、封包、预览与跨电脑同步
+
+- 封包前必须结束全部 `RelicCoH2.exe` 和重复的 `WorldBuilder_CoH_2.exe`；多实例会让源文件、SGA 和 `.sga.list` 的时间戳互相矛盾。`.sga.list` 只能作为某次列包记录，不能当作当前封包内容证明。
+- 本项目 320 × 320 地图的 `_mm.tga` 固定为 768 × 768、32-bit、未压缩 BGRA、alpha 全 255，文件大小固定为 `2,359,314` bytes。使用 `scripts/convert-png-to-coh2-tga.ps1` 生成，不得把 384 PNG/TGA 直接封包。
+- `Archive.exe -t` 只证明归档 CRC 完整；随后必须 `Archive.exe -l`，核对归档中 `.sgb`、`.info`、`_mm.tga` 的尺寸和时间戳确实来自当前版本。
+- `.info` 是 World Builder 生成物，不允许只改 `scenarioname` 来制造新版本名。显示名、SGB 内部场景身份、basename、TOC 路径不一致时，游戏可能挂载 SGA 却不把地图登记到列表。
+- 交付前把源 bundle 和最终 SGA 复制进仓库，再逐文件计算 SHA-256；仓库中的 SGB 必须与 World Builder 当前源 SGB 同哈希，仓库中的 SGA 必须与运行目录活动 SGA 同哈希。文本 sidecar 使用 `.gitattributes` 的 `-text` 保持跨电脑字节一致。
+- 路网和植被的全局预览必须单独提交到 `evidence/`。预览至少能读出一条连续主干、两侧支路、镇中心建筑组团、果园/林篱和边缘高树带；不能用旧版环路截图或编辑器局部截图代替。
